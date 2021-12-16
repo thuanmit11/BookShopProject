@@ -1,41 +1,30 @@
-<!DOCTYPE html>
-<html lang="zxx">
-    
+<%-- 
+    Document   : signin
+    Created on : Dec 16, 2021, 9:44:20 PM
+    Author     : Seth_Etherald
+--%>
 
-<head>        
-        
-        <!-- Meta -->
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
-        
-        <!-- Title -->
-        <title>..:: LIBRARIA ::..</title>
-        
-        <!-- Favicon -->
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-        
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- Mobile Menu -->
         <link href="css/mmenu.css" rel="stylesheet" type="text/css" />
         <link href="css/mmenu.positioning.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- Stylesheet -->
         <link href="style.css" rel="stylesheet" type="text/css" />
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="js/html5shiv.min.js"></script>
-        <script src="js/respond.min.js"></script>
-        <![endif]-->
     </head>
-
-
     <body>
-        
+
         <!-- Start: Header Section -->
         <header id="header-v1" class="navbar-wrapper inner-navbar-wrapper">
             <div class="container">
@@ -231,7 +220,7 @@
             </div>
         </header>
         <!-- End: Header Section -->
-        
+
         <!-- Start: Page Banner -->
         <section class="page-banner services-banner">
             <div class="container">
@@ -266,32 +255,26 @@
                                                             <h2>Sign in</h2>
                                                             <span class="underline left"></span>
                                                         </div>
-                                                        <form class="login" method="post">
+                                                        <form class="login" action="login" method="post">
+                                                            <div class="text-danger">${loginMessage}</div>
                                                             <p class="form-row form-row-first input-required">
                                                                 <label>
-                                                                    <span class="first-letter">Barcode or Username</span>  
+                                                                    <span class="first-letter">Username</span>  
                                                                     <span class="second-letter">*</span>
                                                                 </label>
-                                                                <input type="text"  id="username" name="username" class="input-text">
-                                                             </p>
+                                                                <input type="text"  id="loginUsername" name="loginUsername" class="input-text">
+                                                                <span class="text-danger" id="usernameMessage"></span>
+                                                            </p>
                                                             <p class="form-row form-row-last input-required">
                                                                 <label>
-                                                                    <span class="first-letter">Pin</span>  
+                                                                    <span class="first-letter">Password</span>  
                                                                     <span class="second-letter">*</span>
                                                                 </label>
-                                                                <input type="password" id="password" name="password" class="input-text">
+                                                                <input type="password" id="loginPassword" name="loginPassword" class="input-text">
+                                                                <span class="text-danger" id="passwordMessage"></span>
                                                             </p>
                                                             <div class="clear"></div>
-                                                            <div class="password-form-row">
-                                                                <p class="form-row input-checkbox">
-                                                                    <input type="checkbox" value="forever" id="rememberme" name="rememberme">
-                                                                    <label class="inline" for="rememberme">Remember me</label>
-                                                                </p>
-                                                                <p class="lost_password">
-                                                                    <a href="#">Lost your Pin?</a>
-                                                                </p>
-                                                            </div>
-                                                            <input type="submit" value="Login" name="login" class="button btn btn-default">
+                                                            <input type="submit" value="Login" id="loginbtn" name="login" class="button btn btn-default">
                                                             <div class="clear"></div>
                                                         </form>
                                                     </div>
@@ -339,7 +322,7 @@
             </div>
         </div>
         <!-- End: Cart Section -->
-        
+
         <!-- Start: Social Network -->
         <section class="social-network section-padding">
             <div class="container">
@@ -395,7 +378,7 @@
             </div>
         </section>
         <!-- End: Social Network -->
-        
+
         <!-- Start: Footer -->
         <footer class="site-footer">
             <div class="container">
@@ -499,25 +482,25 @@
             </div>
         </footer>
         <!-- End: Footer -->
-        
+
         <!-- jQuery Latest Version 1.x -->
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-        
+
         <!-- jQuery UI -->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        
+
         <!-- jQuery Easing -->
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
         <!-- Bootstrap -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
+
         <!-- Mobile Menu -->
         <script type="text/javascript" src="js/mmenu.min.js"></script>
-        
+
         <!-- Harvey - State manager for media queries -->
         <script type="text/javascript" src="js/harvey.min.js"></script>
-        
+
         <!-- Waypoints - Load Elements on View -->
         <script type="text/javascript" src="js/waypoints.min.js"></script>
 
@@ -529,29 +512,26 @@
 
         <!-- Owl Carousel -->
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-        
+
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
-        
+
         <!-- Responsive Tabs -->
         <script type="text/javascript" src="js/responsive.tabs.min.js"></script>
-        
+
         <!-- Responsive Table -->
         <script type="text/javascript" src="js/responsive.table.min.js"></script>
-        
+
         <!-- Masonry -->
         <script type="text/javascript" src="js/masonry.min.js"></script>
-        
+
         <!-- Carousel Swipe -->
         <script type="text/javascript" src="js/carousel.swipe.min.js"></script>
-        
+
         <!-- bxSlider -->
         <script type="text/javascript" src="js/bxslider.min.js"></script>
-        
+
         <!-- Custom Scripts -->
         <script type="text/javascript" src="js/main.js"></script>
-
     </body>
-
-
 </html>

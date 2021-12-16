@@ -38,13 +38,13 @@ public class Login extends HttpServlet {
         //Hash the password right here before calling login from DAO
         User user = dao.login(username, password);
         if (user == null) {
-            request.setAttribute("message", "Wrong Email or Password");
+            request.setAttribute("loginMessage", "Wrong Username or Password");
             request.getRequestDispatcher("signin.jsp").forward(request, response);
         } else {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             //Replace the string "home" with the servlet leading to homepage
-            request.getRequestDispatcher("home").forward(request, response);
+            request.getRequestDispatcher("index.html").forward(request, response);
         }
     }
 }
