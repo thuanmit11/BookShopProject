@@ -5,7 +5,9 @@
         <group>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/model/Book.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/dal/BookDAO.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/blog.html</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/dal/BaseDAO.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/adminCreate.jsp</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/index.html</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/index-2.html</file>
         </group>

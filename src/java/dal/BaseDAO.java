@@ -28,6 +28,7 @@ public abstract class BaseDAO<T> {
             connection = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(BaseDAO.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ket noi that bai");
         }
     }
         

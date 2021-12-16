@@ -101,28 +101,36 @@ public class BookDAO extends BaseDAO<Book> {
     }
 
     public void add(String id, String title, String author, String brief,
-            String publisher, String content, String category) throws Exception {
+            String publisher, String content, String category){
 
-        if (getBookById(id) != null) {
-            throw new Exception("Id existed");
-        } else {
-            String query = "INSERT INTO book VALUES (?, ?, ?, ?, ?, ?, ?);";
-            try {
-                ps = connection.prepareStatement(query);
-                //Set data to the "?"
-                ps.setString(1, id);
-                ps.setString(2, title);
-                ps.setString(3, author);
-                ps.setString(4, brief);
-                ps.setString(5, publisher);
-                ps.setString(6, content);
-                ps.setString(7, category);
-                ps.executeUpdate();
-            } catch (Exception e) {
+        String query = "INSERT INTO book VALUES (?, ?, ?, ?, ?, ?, ?);";
+        try {
+            ps = connection.prepareStatement(query);
+            //Set data to the "?"
+            ps.setString(1, id);
+            ps.setString(2, title);
+            ps.setString(3, author);
+            ps.setString(4, brief);
+            ps.setString(5, publisher);
+            ps.setString(6, content);
+            ps.setString(7, category);
+            ps.executeUpdate();
 
-            }
+        } catch (Exception e) {
+
         }
 
+    }
+    
+    
+    public static void main(String args[]){
+        BookDAO bd = new BookDAO();
+//        System.out.println("Dit me m");
+//        List<Book> bs = bd.getAllBooks();
+        
+        Book b = bd.getBookById("00");
+        System.out.println(b);
+        
     }
 
 }
