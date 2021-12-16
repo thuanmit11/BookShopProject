@@ -1,4 +1,4 @@
-﻿CREATE DATABASE [ReadingBookSystem]
+CREATE DATABASE [ReadingBookSystem]
 USE [ReadingBookSystem]
 GO
 
@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 CREATE TABLE [dbo].[User](
-	[ID] [nvarchar](10) NOT NULL,
+	[ID] INT IDENTITY(1,1) NOT NULL,
 	[UserName] [nvarchar](50) NULL,
 	[Password] [nvarchar](50) NULL,
  CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
@@ -39,7 +39,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[BookCase](
-	[BookCaseID] [nvarchar](10) NOT NULL,
+	[BookCaseID] INT IDENTITY(1,1) NOT NULL,
 	[BookCaseName] [nvarchar](50) NOT NULL,
  CONSTRAINT [PK_BookCase] PRIMARY KEY CLUSTERED 
 (
@@ -54,7 +54,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Book](
-	[BookID] [nvarchar](10) NOT NULL,
+	[BookID] [nvarchar](10)NOT NULL,
 	[BookTitle] [nvarchar](50) NULL,
 	[Author] [nvarchar](50) NULL,
 	[Brief] [nvarchar](200) NULL,
@@ -74,7 +74,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[Contain](
-	[BookCaseID] [nvarchar](10) NOT NULL,
+	[BookCaseID] INT IDENTITY(1,1) NOT NULL,
 	[BookID] [nvarchar](10) NOT NULL,
 	[CreateDate] [nvarchar](10)  NULL,
  CONSTRAINT [PK_Contain] PRIMARY KEY CLUSTERED 
@@ -91,7 +91,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[UserRole](
-	[ID] [nvarchar](10)  NOT NULL,
+	[ID] INT IDENTITY(1,1)  NOT NULL,
 	[RoleID] [nvarchar](10)  NOT NULL,
 	 CONSTRAINT [PK_UserRole] PRIMARY KEY CLUSTERED 
 (
@@ -102,13 +102,13 @@ CREATE TABLE [dbo].[UserRole](
 GO
 
 
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'10458861', N'viet123', N'123')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'10856689', N'nam012', N'012')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'10762861', N'tung234', N'234')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'10000321', N'thuan345', N'345')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'10986677', N'trang456', N'456')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'12345678', N'ha789', N'789')
-INSERT [dbo].[User] ([ID], [UserName], [Password]) VALUES (N'14078914', N'vu678', N'678')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'viet123', N'123')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'nam012', N'012')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'tung234', N'234')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'thuan345', N'345')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'trang456', N'456')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'ha789', N'789')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'vu678', N'678')
 
 
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'AM', N'Admin')
@@ -116,29 +116,29 @@ INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'US', N'User')
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'OT', N'Other')
 
 
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'10856689', N'Tu sach cua Nam')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'10458861', N'Tu sach cua Viet')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'10762861', N'Tu sach cua Tung')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'10000321', N'Tu sach cua Thuan')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'10986677', N'Tu sach cua Trang')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'12345678', N'Tu sach cua Ha')
-INSERT [dbo].[BookCase] ([BookCaseID], [BookCaseName]) VALUES (N'14078914', N'Tu sach cua anh Vu')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Nam')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Viet')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Tung')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Thuan')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Trang')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Ha')
+INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua anh Vu')
 
-INSERT [dbo].[UserRole] ([ID], [RoleID]) VALUES (N'10458861',  N'AM')
-INSERT [dbo].[UserRole] ([ID], [RoleID]) VALUES (N'10856689',  N'AM')
-INSERT [dbo].[UserRole] ([ID], [RoleID]) VALUES (N'10000321',  N'US')
-INSERT [dbo].[UserRole] ([ID], [RoleID]) VALUES (N'12345678',  N'US')
-INSERT [dbo].[UserRole] ([ID], [RoleID]) VALUES (N'14078914',  N'US')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'AM')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'AM')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
 
 
 
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'10762861', N'09', N'14/10/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'10000321', N'00', N'14/12/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'10986677', N'01', N'14/12/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'12345678', N'04', N'14/12/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'14078914', N'06', N'14/12/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'12345678', N'03', N'14/12/2021')
-INSERT [dbo].[Contain] ([BookCaseID], [BookID], [CreateDate]) VALUES (N'14078914', N'05', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'09', N'14/10/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'00', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'01', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'04', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'06', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'03', N'14/12/2021')
+INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'05', N'14/12/2021')
 
 INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Content], [Category]) VALUES (N'01', N'Anna Karenina', N'Leo Tolstoy', N'image/anna.jpg', N'14/10/2017', N'Anna (Tatyana Drubich) - cô vợ trẻ đẹp của Bá tước Aleksey Karenin (Oleg Yankovsky) - kém chồng tới 20 tuổi. Cô gặp chàng sĩ quan điển trai, lịch thiệp tên là Vronsky (Yaroslav Boyko), và giữa họ nảy nở một chuyện tình. Giờ đây, Anna bị giằng xé giữa tình yêu của mình dành cho Vronsky và cuộc hôn nhân với Karenin. Dư luận xã hội lên án hành vi của Anna và Vronsky. Họ rơi vào trạng thái đầy hiểm nguy. Không thể chịu đựng cuộc xung đột giữa những cảm xúc mới của bản thân với trách nhiệm của người vợ, người mẹ, Anna đã lao mình vào một đoàn tàu hỏa đang chạy, kết thúc số phận đầy bi kịch.', N'Romance' )
 INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Content], [Category]) VALUES (N'02', N'Đứng Trong Bóng Tối', N'Shanon McKenna', N'image/bongtoi.jpg', N'14/10/2017', N'Connor McCloud là một trong những anh hùng đang trên đà xuống dốc. Mang theo bên mình tình yêu bao năm trời dành cho Erin, cô con gái của cựu cấp trên, Connor cảm thấy mình chính là nguyên nhân khiến cho Erin phải đau khổ khi anh đã tống người bố tham nhũng của cô vào tù và đánh đập dã man một gã đàn ông khác ngay trước mắt cô. Sự thật nghiệt ngã ấy khiến Erin tổn thương sâu sắc. Biết rằng Novak và gã tay sai Georg Lusch - những kẻ từng đe dọa đến cuộc sống của Erin, đã trốn thoát khỏi nhà tù liên bang, Connor cảm thấy lo lắng hơn bao giờ hết. Không nhận được sự giúp đỡ từ FBI, anh đã tự mình tìm cách bảo vệ cô. Erin không nghĩ rằng cô cần tới sự bảo vệ, đặc biệt là từ người đàn ông lạnh lùng mà cô đã si mê từ khi còn là một thiếu nữ. Nhưng Connor vẫn một lần nữa bước vào cuộc sống của cô với vai trò một vệ sỹ. Đặc biệt, đó lại là người cô đã mê đắm từ lâu. Cô biết mình phải giữ khoảng cách với anh nhưng từ sâu thẳm tâm hồn cô là những khao khát thầm kín mãnh liệt. Cô muốn để anh bước vào thế giới của mình thêm một lần nữa…', N'Detective' )
