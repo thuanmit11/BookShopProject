@@ -288,23 +288,37 @@
                                                         <div class="new-user-head">
                                                             <h2>Create New Account</h2>
                                                             <span class="underline left"></span>
-                                                            <p>If no barcode has been assigned for your account, please contact the library.</p>
+                                                            
                                                         </div>
-                                                        <form class="login" method="post">
+                                                         <form action="Register" class="login" method="post" onsubmit="return validate()">
                                                             <p class="form-row form-row-first input-required">
                                                                 <label>
-                                                                    <span class="first-letter">Barcode</span>  
+                                                                    <span class="first-letter">Type your username</span>  
                                                                     <span class="second-letter">*</span>
                                                                 </label>
-                                                                <input type="text" id="username1" name="username" class="input-text">
+                                                                <input type="text" id="usernameReg" name="usernameReg" class="input-text">
                                                             </p>
                                                             <p class="form-row input-required">
                                                                 <label>
                                                                     <span class="first-letter">Password</span>  
                                                                     <span class="second-letter">*</span>
                                                                 </label>
-                                                                <input type="password" id="password1" name="password" class="input-text">
-                                                            </p>                                                                                
+                                                                <input type="password" id="passwordReg" name="passwordReg" class="input-text">
+                                                            </p> 
+                                                            <p class="form-row input-required">
+                                                                <label>
+                                                                    <span class="first-letter">Re-type your password</span>  
+                                                                    <span class="second-letter">*</span>
+                                                                </label>
+                                                                <input type="password" id="passwordRetype" name="passwordRetype" class="input-text">
+                                                            </p> 
+                                                            <div class="password-form-row">
+                                                                <p class="form-row input-checkbox" >
+                                                                    <input type="checkbox" id="acceptTerm" name="acceptTerm">
+                                                                    <label class="inline" for="acceptTerm" style="color: black">I accept Term & Conditions</label>
+                                                                </p>
+                                                            </div> 
+                                                            <div id="registerErrorMessage"></div>
                                                             <div class="clear"></div>
                                                             <input type="submit" value="Signup" name="signup" class="button btn btn-default">
                                                             <div class="clear"></div>
@@ -482,7 +496,7 @@
             </div>
         </footer>
         <!-- End: Footer -->
-
+        <script type="text/javascript" src="js/signinNregister.js"></script>            
         <!-- jQuery Latest Version 1.x -->
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 
