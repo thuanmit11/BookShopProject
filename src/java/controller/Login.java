@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.User;
+import utils.Encrypt;
 
 /**
  *
@@ -36,7 +37,7 @@ public class Login extends HttpServlet {
         String username = request.getParameter("loginUsername");
         String password = request.getParameter("loginPassword");
         //Hash the password right here before calling login from DAO
-        User user = dao.login(username, password);
+        User user = dao.login(username, Encrypt.md5(password));
         if (user == null) {
             request.setAttribute("loginMessage", "Wrong Username or Password");
             request.getRequestDispatcher("signin.jsp").forward(request, response);
