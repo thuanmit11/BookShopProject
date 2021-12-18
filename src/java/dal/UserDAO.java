@@ -9,6 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.User;
+import utils.Encrypt;
 
 /**
  *
@@ -63,7 +64,7 @@ public class UserDAO extends BaseDAO {
             ps = connection.prepareStatement(query);
             //Set data to the "?"
             ps.setString(1, username);
-            ps.setString(2, password);
+            ps.setString(2, Encrypt.md5(password));
             ps.executeUpdate();
 
         } catch (SQLException throwables) {
