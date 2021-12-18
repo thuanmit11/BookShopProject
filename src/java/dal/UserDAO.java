@@ -39,6 +39,22 @@ public class UserDAO extends BaseDAO {
         return null;
     }
     
+        public String checkRole(int userID) {
+        String query = "SELECT RoleID FROM [dbo].[UserRole] WHERE ID = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+    
+    
      public User checkUsername(String username){
         String query = "SELECT * FROM [dbo].[User] WHERE UserName = ?";
         try {

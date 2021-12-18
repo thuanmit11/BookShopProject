@@ -42,8 +42,12 @@ public class Login extends HttpServlet {
             request.setAttribute("loginMessage", "Wrong Username or Password");
             request.getRequestDispatcher("signin.jsp").forward(request, response);
         } else {
+            //Get the role of this session's user
+            //AM is for Admin, US is for User
+            String currentRole = dao.checkRole(user.getID());
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("role", currentRole);
             //Replace the string "home" with the servlet leading to homepage
             request.getRequestDispatcher("index.html").forward(request, response);
         }
