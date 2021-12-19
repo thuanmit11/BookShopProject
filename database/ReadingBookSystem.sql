@@ -1,4 +1,5 @@
 CREATE DATABASE [ReadingBookSystem]
+GO
 USE [ReadingBookSystem]
 GO
 
@@ -104,13 +105,13 @@ GO
 SELECT * FROM [dbo].[User]
 SELECT * FROM [dbo].[UserRole]
 
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'viet123', N'123')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'nam012', N'012')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'tung234', N'234')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'thuan345', N'345')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'trang456', N'456')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'ha789', N'789')
-INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'vu678', N'678')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'viet123', N'202CB962AC59075B964B07152D234B70')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'nam012', N'D2490F048DC3B77A457E3E450AB4EB38')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'tung234', N'289DFF07669D7A23DE0EF88D2F7129E7')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'thuan345', N'D81F9C1BE2E08964BF9F24B15F0E4900')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'trang456', N'250CF8B51C773F3F8DC8B4BE867A9A02')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'ha789', N'68053AF2923E00204C3CA7C6A3150CF7')
+INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'vu678', N'9FE8593A8A330607D76796B35C64C600')
 
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'AM', N'Admin')
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'US', N'User')
