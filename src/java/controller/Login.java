@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.User;
+import utils.Encrypt;
 
 /**
  *
@@ -36,15 +37,19 @@ public class Login extends HttpServlet {
         String username = request.getParameter("loginUsername");
         String password = request.getParameter("loginPassword");
         //Hash the password right here before calling login from DAO
-        User user = dao.login(username, password);
+        User user = dao.login(username, Encrypt.md5(password));
         if (user == null) {
-            request.setAttribute("message", "Wrong Email or Password");
+            request.setAttribute("loginMessage", "Wrong Username or Password");
             request.getRequestDispatcher("signin.jsp").forward(request, response);
         } else {
+            //Get the role of this session's user
+            //AM is for Admin, US is for User
+            String currentRole = dao.checkRole(user.getID());
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("role", currentRole);
             //Replace the string "home" with the servlet leading to homepage
-            request.getRequestDispatcher("home").forward(request, response);
+            request.getRequestDispatcher("index.html").forward(request, response);
         }
     }
 }

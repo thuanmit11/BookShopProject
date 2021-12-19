@@ -101,6 +101,8 @@ CREATE TABLE [dbo].[UserRole](
 ) ON [PRIMARY]
 GO
 
+SELECT * FROM [dbo].[User]
+SELECT * FROM [dbo].[UserRole]
 
 INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'viet123', N'123')
 INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'nam012', N'012')
@@ -110,11 +112,9 @@ INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'trang456', N'456')
 INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'ha789', N'789')
 INSERT [dbo].[User] ([UserName], [Password]) VALUES (N'vu678', N'678')
 
-
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'AM', N'Admin')
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'US', N'User')
 INSERT [dbo].[Role] ([RoleID], [Authority]) VALUES (N'OT', N'Other')
-
 
 INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Nam')
 INSERT [dbo].[BookCase] ([BookCaseName]) VALUES (N'Tu sach cua Viet')
@@ -129,8 +129,8 @@ INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'AM')
 INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
 INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
 INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'US')
-
-
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'AM')
+INSERT [dbo].[UserRole] ([RoleID]) VALUES (N'AM')
 
 INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'09', N'14/10/2021')
 INSERT [dbo].[Contain] ([BookID], [CreateDate]) VALUES (N'00', N'14/12/2021')
@@ -161,8 +161,6 @@ INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Con
 INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Content], [Category]) VALUES (N'19', N'Tên của đóa hồng', N'Umberto Eco', N'image/tencua.jpg', N'14/10/2017', N'Nội dung của cuốn tiểu thuyết xoay quanh cuộc sống trong một tu viện có kiến trúc tuyệt đẹp nhưng lại diễn ra một tội ác khủng khiếp đó là hàng loạt tu sĩ bị giết hại một cách tàn độc và nhân vật chính là một tu sĩ có tên là Wiliam, ông chính người đã tìm hiểu và phá hàng loạt các vụ án mạng ở nơi tu viện đầy tâm linh và thiêng liêng này. ', N'Detective' )
 INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Content], [Category]) VALUES (N'20', N'Tiếng chim hót trong bụi mận gai', N'Colleen McCullough', N'image/tiengchim.jpg', N'14/10/2017', N'Nhân vật trung tâm trong tác phẩm chính là Meggie – người phụ nữ cố gắng vượt lên số phận, vượt mặt Chúa trời để giành lấy tình yêu, giành lấy hạnh phúc. Chuyện tình của cô với cha Ralph được ví như bài ca của chú chim hót hay nhất thế gian, cả hai đều phải đánh đổi cả cuộc đời để có được điều mình muốn. “Bởi vì tất cả những gì tốt đẹp nhất chỉ có thể có được khi ta chịu trả giá bằng nỗi đau khổ vĩ đại”.', N'Romance' )
 INSERT [dbo].[Book] ([BookID], [BookTitle], [Author], [Brief], [Publisher], [Content], [Category]) VALUES (N'21', N'And then there were none', N'Agatha Christies', N'image/varoi.jpg', N'14/10/2017', N'Nội dung cuốn tiểu thuyết xoay quanh câu chuyện của một nhóm người lạ mặt, không phân biệt tuổi tác, giàu nghèo hay địa vị xã hội vô tình gặp nhau tại một hòn đảo bởi một lời mời bí ẩn. Rồi bỗng nhiên xuất hiện nhiều cái chết thương tâm không rõ lý do, không rõ hung thủ. Những vụ án tưởng chừng như đã đi vào bế tắc thì bỗng nhiên được sáng tỏ nhờ một lá thư trong chai trôi dạt trên biển.', N'Detective' )
-
-
 
 
 ALTER TABLE [dbo].[BookCase]  WITH CHECK ADD  CONSTRAINT [FK_BookCase_User] FOREIGN KEY([BookCaseID])
