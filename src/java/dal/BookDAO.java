@@ -73,6 +73,21 @@ public class BookDAO extends BaseDAO<Book> {
         }
         return null;
     }
+    
+    public void delete(String id) {
+        String query = "DELETE FROM contain  WHERE bookid = ?\n"
+                + "DELETE FROM book WHERE bookid = ?";
+        try {
+            ps = connection.prepareStatement(query);
+            //Put the id inside the first "?"
+            ps.setString(1, id);
+            ps.setString(2, id);
+            //Execute: No Result table -> No RS, only executeUpdate execute
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+    
 
     public void edit(String id, String title, String author, String brief,
             String publisher, String content, String category) {

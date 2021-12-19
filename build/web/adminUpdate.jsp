@@ -4,9 +4,12 @@
     Author     : ThuanMit
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -23,7 +26,7 @@
 
         <!-- Stylesheet -->
         <link href="style.css" rel="stylesheet" type="text/css" />
-       
+
     </head>
     <body>
 
@@ -625,17 +628,17 @@
                                 <input type="text" name="id" value="${book.id}"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
                                 <input type="text" name="title" value="${book.title}"/>
                                 <input type="text" name="author" value="${book.author}"/>
-                                
+
                                 <!--image-->
                                 <span>Change the image's path</span>
                                 <img src="${book.brief}" alt="alo" width="150" height="auto"/>                                
                                 <input type="text" name="brief" value="${book.brief}"/>
-                                
+
                                 <input type="text" name="publisher" value="${book.publisher}"/>
-                                <textarea  name="content" cols='50' rows='10'value="${book.content}"></textarea>
+                                <textarea type="text"  name="content" cols='50' rows='10' >${book.content}</textarea>
                                 <input type="text" name="cate" value="${book.category}"/>
-                                
-                                <input type='submit' value='Create'/>
+
+                                <input type='submit' value='Save'/>
                             </form> 
                         </div>
                     </div>
@@ -834,7 +837,7 @@
         <!-- Owl Carousel -->
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 
-        
+
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
 
@@ -855,8 +858,8 @@
 
         <!-- Custom Scripts -->
         <script type="text/javascript" src="js/main.js"></script>
-        
-        
+
+
 
     </body>
 </html>

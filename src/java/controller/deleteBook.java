@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ThuanMit
  */
-@WebServlet(name = "update", urlPatterns = {"/update"})
-public class update extends HttpServlet {
+@WebServlet(name = "deleteBook", urlPatterns = {"/deleteBook"})
+public class deleteBook extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +38,10 @@ public class update extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet update</title>");
+            out.println("<title>Servlet deleteBook</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet update at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet deleteBook at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,20 +59,11 @@ public class update extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-
-        BookDAO bd = new BookDAO();
-        String id = request.getParameter("id");
-        String author = request.getParameter("author");
-        String title = request.getParameter("title");
-        String publisher = request.getParameter("publisher");
-        String brief = request.getParameter("brief");
-        String content = request.getParameter("content");
-        String cate = request.getParameter("cate");
-
-        bd.edit(id,title, author, brief, publisher, content, cate);
         
-    response.sendRedirect("adminHomePage");
+        String id = request.getParameter("id");
+        BookDAO bd = new BookDAO();
+        bd.delete(id);
+        response.sendRedirect("adminHomePage");
     }
 
     /**

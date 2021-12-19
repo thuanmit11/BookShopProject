@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html>
 
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -295,6 +295,7 @@
                                                     </div>
                                                     <footer class="entry-footer">
                                                         <a class="btn btn-default" href="updatePage?id=${x.id}">${x.category}</a>
+                                                        <a class="btn btn-default" href="deleteBook?id=${x.id}">Delete</a>
                                                     </footer>
                                                 </div>
                                             </div>
