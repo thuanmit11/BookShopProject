@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import utils.Encrypt;
 
 /**
  *
@@ -87,7 +88,7 @@ public class Register extends HttpServlet {
         {
             try
             {
-               dao.registerAccount(username, password);
+               dao.registerAccount(username, Encrypt.md5(password));
             }
             catch(Exception e)
             {
