@@ -48,8 +48,14 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", currentRole);
-            //Replace the string "home" with the servlet leading to homepage
-            request.getRequestDispatcher("index.html").forward(request, response);
+            if (currentRole.equals("AM"))
+            {
+                response.sendRedirect("adminHomePage");
+            }
+            else
+            {
+                response.sendRedirect("homeUser");
+            }
         }
     }
 }

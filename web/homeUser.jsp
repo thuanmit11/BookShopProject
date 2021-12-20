@@ -1,11 +1,19 @@
+<%-- 
+    Document   : homeUser
+    Created on : Dec 21, 2021, 2:03:43 AM
+    Author     : lucif
+--%>
 <!DOCTYPE html>
 <html lang="zxx">
-    
 
-<head>        
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+    <head>        
 
         <!-- Meta -->
-        <meta charset="utf-8" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 
         <!-- Title -->
@@ -17,7 +25,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- Mobile Menu -->
         <link href="css/mmenu.css" rel="stylesheet" type="text/css" />
         <link href="css/mmenu.positioning.css" rel="stylesheet" type="text/css" />
@@ -66,7 +74,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="topbar-links">
-                                                <a href="signin.html"><i class="fa fa-lock"></i>Login / Register</a>
+                                                <a href=""><i class="fa fa-lock"></i>${user.getUserName()}</a>
                                                 <span>|</span>
                                                 <div class="header-cart dropdown">
                                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -249,9 +257,42 @@
             </div>
         </section>
         <!-- End: Page Banner -->
-        
+
         <!-- Start: Blog Section -->
-        <div id="content" class="site-content">
+        <div class="container" style="height: max-content; vertical-align: middle; min-height: 600px">
+            <h2 style="text-align: center; margin: 3%; color: #f35618da;">Home</h2>
+            <table id="customers" class="table" style="width:100%;">
+                <thead>
+                    <tr>
+                        
+                        <td>ID</td>
+                        <td>Image</td>
+                        <td>Title</td>
+                        <td>Publisher</td>
+                        <td>Category</td>  
+                    </tr>
+                </thead>
+                <tbody>
+     
+                    <c:forEach items="${books}" var="x">
+                        <tr>
+                            <td>${x.id}</td>
+                            <td><a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" id="imgProfile" style="width: 100px; height: auto;" class="img-thumbnail"></a>
+                        </td>
+                        
+                        <td>${x.title}</td>
+                        <td>${x.publisher}</td>
+                        <td>${x.category}</td>    
+                            
+
+                        </tr>
+                    </c:forEach>
+                        
+                </tbody>
+            </table>
+            
+        </div>
+<!--        <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="blog-main-list">
@@ -259,50 +300,52 @@
                             <div class="row">
                                 <div class="blog-page grid">
                                     <c:forEach items="${books}" var="x">
-                                    <article>
-                                        <div class="grid-item blog-item">
-                                            <div class="post-thumbnail">
-                                              
-                                                <a href="blog-detail.html"><img alt="blog" src="images/blog/blog-01.jpg" /></a>
-                                                <div class="post-share">
-                                                    <a href="#."><i class="fa fa-comment"></i> 37</a>
-                                                    <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
-                                                    <a href="#."><i class="fa fa-eye"></i> 180</a>
-                                                    <a href="#."><i class="fa fa-share-alt"></i> Share</a>
-                                                </div>
-                                            </div>
-                                            <div class="post-detail">
-                                                <header class="entry-header">
-                                                    <div class="blog_meta_category">
-                                                        <span class="arrow-right"></span>
-                                                        <a href="#." rel="category tag">Design</a>, 
-                                                        <a href="#." rel="category tag">art</a>
-                                                    </div>
-                                                    <h3 class="entry-title"><a href="blog-detail.html">Here each week my friends</a></h3>
-                                                    <div class="entry-meta">
-                                                        <span><i class="fa fa-user"></i> <a href="#">Admin</a></span>
-                                                        <span><i class="fa fa-comment"></i> <a href="#">15 Comments</a></span>
-                                                    </div>
-                                                </header>
-                                                <div class="entry-content">
-                                                    <p>Curabitur sagittis fermentum ante at imperdiet. Proin viverra arcu ac quam finibus, efficitur rutrum turpis auctor. Maecenas at mi vitae lacus tempus egestas nec eget eros. Nunc eget est tellus. Quisque quis mattis eros, sit amet facilisis felis. Aliquam molestie purus venenatis lorem laoreet venenatis.....</p>
-                                                </div>
-                                                <footer class="entry-footer">
-                                                    <a class="btn btn-default" href="blog-detail.html">Read More</a>
-                                                </footer>
-                                            </div>
-                                        </div>
-                                       
-                                    </article>
-                                 </c:forEach>
+                                        <article>
+                                            <div class="grid-item blog-item">
+                                                <div class="post-thumbnail">
+                                                    <div class="post-date-box">
+                                                        <div class="post-date">
+                                                            <a class="date" href="updatePage?id=${x.id}">${x.id}</a>
+                                                        </div>
 
+                                                    </div>
+                                                    <a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" /></a>
+                                                                                                        <div class="post-share">
+                                                                                                            <a href="#."><i class="fa fa-comment"></i> 37</a>
+                                                                                                            <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
+                                                                                                            <a href="#."><i class="fa fa-eye"></i> 180</a>
+                                                                                                            <a href="#."><i class="fa fa-share-alt"></i> Share</a>
+                                                                                                        </div>
+                                                </div>
+                                                <div class="post-detail">
+                                                    <header class="entry-header">
+                                                        <div class="blog_meta_category">
+                                                            <span class="arrow-right"></span>
+                                                            <a href="updatePage?id=${x.id}" rel="category tag">${x.title}</a>, 
+                                                        </div>
+                                                        <h3 class="entry-title"><a href="updatePage?id=${x.id}">${x.publisher}</a></h3>
+                                                        <div class="entry-meta">
+                                                            <span><i class="fa fa-user"></i> <a href="updatePage?id=${x.id}">Admin</a></span>
+                                                        </div>
+                                                    </header>
+                                                    <div class="entry-content">
+                                                        <p>${x.content}</p>
+                                                    </div>
+                                                    <footer class="entry-footer">
+                                                        <a class="btn btn-default" href="updatePage?id=${x.id}">${x.category}</a>
+                                                    </footer>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </c:forEach>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
-        </div>
+        </div>-->
         <!-- End: Blog Section -->
 
         <!-- Start: Social Network -->
@@ -467,22 +510,22 @@
 
         <!-- jQuery Latest Version 1.x -->
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-        
+
         <!-- jQuery UI -->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        
+
         <!-- jQuery Easing -->
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
         <!-- Bootstrap -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
+
         <!-- Mobile Menu -->
         <script type="text/javascript" src="js/mmenu.min.js"></script>
-        
+
         <!-- Harvey - State manager for media queries -->
         <script type="text/javascript" src="js/harvey.min.js"></script>
-        
+
         <!-- Waypoints - Load Elements on View -->
         <script type="text/javascript" src="js/waypoints.min.js"></script>
 
@@ -494,28 +537,28 @@
 
         <!-- Owl Carousel -->
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-        
+
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
-        
+
         <!-- Responsive Tabs -->
         <script type="text/javascript" src="js/responsive.tabs.min.js"></script>
-        
+
         <!-- Responsive Table -->
         <script type="text/javascript" src="js/responsive.table.min.js"></script>
-        
+
         <!-- Masonry -->
         <script type="text/javascript" src="js/masonry.min.js"></script>
-        
+
         <!-- Carousel Swipe -->
         <script type="text/javascript" src="js/carousel.swipe.min.js"></script>
-        
+
         <!-- bxSlider -->
         <script type="text/javascript" src="js/bxslider.min.js"></script>
-        
+
         <!-- Custom Scripts -->
         <script type="text/javascript" src="js/main.js"></script>
-        
+
     </body>
 
 

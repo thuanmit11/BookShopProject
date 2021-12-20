@@ -1,25 +1,26 @@
-    /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package controller;
 
-import dal.UserDAO;
+import dal.BookDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import utils.Encrypt;
+import model.Book;
 
 /**
  *
  * @author lucif
  */
-@WebServlet(name = "Register", urlPatterns = {"/Register"})
-public class Register extends HttpServlet {
+@WebServlet(name = "userHome", urlPatterns = {"/userHome"})
+public class userHome extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,10 +39,10 @@ public class Register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet userHome</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet userHome at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -59,8 +60,10 @@ public class Register extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
+        BookDAO bd = new BookDAO();
+        List<Book> books = bd.getAllBooks();
+        request.setAttribute("books",books);
+        request.getRequestDispatcher("homeUser_1.jsp").forward(request, response);
     }
 
     /**
@@ -74,31 +77,7 @@ public class Register extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserDAO dao = new UserDAO();
-        String username = request.getParameter("usernameReg");
-        String password = request.getParameter("passwordReg");
-        String passwordRe = request.getParameter("passwordRetype");
-        String accept = request.getParameter("acceptTerm");
-        System.out.println(accept);
-        if ((accept == null) || !(password.equals(passwordRe)) || (dao.checkUsername(username)!= null))
-        {
-            System.out.println("Error");
-            request.getRequestDispatcher("signin.jsp").forward(request, response);
-        }
-        else
-        {
-            try
-            {
-               dao.registerAccount(username, password);
-            }
-            catch(Exception e)
-            {
-                e.printStackTrace();
-            }
-            
-            dao.registerRoleAdmin();
-            request.getRequestDispatcher("signin.jsp").forward(request, response);
-        }
+        processRequest(request, response);
     }
 
     /**

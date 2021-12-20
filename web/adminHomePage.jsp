@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="topbar-links">
-                                                <a href="signin.html"><i class="fa fa-lock"></i>Login / Register</a>
+                                                <a href=""><i class="fa fa-lock"></i>${user.getUserName()}</a>
                                                 <span>|</span>
                                                 <div class="header-cart dropdown">
                                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -271,7 +271,7 @@
                     </tr>
                 </thead>
                 <tbody>
-              
+     
                     <c:forEach items="${books}" var="x">
                         <tr>
                             <td>${x.id}</td>

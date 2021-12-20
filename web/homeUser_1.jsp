@@ -1,11 +1,19 @@
+<%-- 
+    Document   : homeUser
+    Created on : Dec 21, 2021, 2:03:43 AM
+    Author     : lucif
+--%>
 <!DOCTYPE html>
 <html lang="zxx">
-    
 
-<head>        
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+    <head>        
 
         <!-- Meta -->
-        <meta charset="utf-8" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 
         <!-- Title -->
@@ -17,7 +25,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        
+
         <!-- Mobile Menu -->
         <link href="css/mmenu.css" rel="stylesheet" type="text/css" />
         <link href="css/mmenu.positioning.css" rel="stylesheet" type="text/css" />
@@ -66,7 +74,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="topbar-links">
-                                                <a href="signin.html"><i class="fa fa-lock"></i>Login / Register</a>
+                                                <a href=""><i class="fa fa-lock"></i>${user.getUserName()}</a>
                                                 <span>|</span>
                                                 <div class="header-cart dropdown">
                                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -249,7 +257,8 @@
             </div>
         </section>
         <!-- End: Page Banner -->
-        
+
+       
         <!-- Start: Blog Section -->
         <div id="content" class="site-content">
             <div id="primary" class="content-area">
@@ -263,25 +272,18 @@
                                         <div class="grid-item blog-item">
                                             <div class="post-thumbnail">
                                               
-                                                <a href="blog-detail.html"><img alt="blog" src="images/blog/blog-01.jpg" /></a>
-                                                <div class="post-share">
-                                                    <a href="#."><i class="fa fa-comment"></i> 37</a>
-                                                    <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
-                                                    <a href="#."><i class="fa fa-eye"></i> 180</a>
-                                                    <a href="#."><i class="fa fa-share-alt"></i> Share</a>
-                                                </div>
+                                                <a href="blog-detail.html"><img alt="blog" src="${x.brief}" /></a>
+                                               
                                             </div>
                                             <div class="post-detail">
                                                 <header class="entry-header">
                                                     <div class="blog_meta_category">
                                                         <span class="arrow-right"></span>
-                                                        <a href="#." rel="category tag">Design</a>, 
-                                                        <a href="#." rel="category tag">art</a>
+                                                        <a href="#." rel="category tag">${x.category}</a>
                                                     </div>
-                                                    <h3 class="entry-title"><a href="blog-detail.html">Here each week my friends</a></h3>
+                                                    <h3 class="entry-title"><a href="blog-detail.html">${x.title}</a></h3>
                                                     <div class="entry-meta">
-                                                        <span><i class="fa fa-user"></i> <a href="#">Admin</a></span>
-                                                        <span><i class="fa fa-comment"></i> <a href="#">15 Comments</a></span>
+                                                        <span><i class="fa fa-user"></i> <a href="#">${x.publisher}</a></span>
                                                     </div>
                                                 </header>
                                                 <div class="entry-content">
@@ -304,6 +306,7 @@
             </div>
         </div>
         <!-- End: Blog Section -->
+
 
         <!-- Start: Social Network -->
         <section class="social-network section-padding">
@@ -467,22 +470,22 @@
 
         <!-- jQuery Latest Version 1.x -->
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-        
+
         <!-- jQuery UI -->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-        
+
         <!-- jQuery Easing -->
         <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
         <!-- Bootstrap -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
+
         <!-- Mobile Menu -->
         <script type="text/javascript" src="js/mmenu.min.js"></script>
-        
+
         <!-- Harvey - State manager for media queries -->
         <script type="text/javascript" src="js/harvey.min.js"></script>
-        
+
         <!-- Waypoints - Load Elements on View -->
         <script type="text/javascript" src="js/waypoints.min.js"></script>
 
@@ -494,28 +497,28 @@
 
         <!-- Owl Carousel -->
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-        
+
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
-        
+
         <!-- Responsive Tabs -->
         <script type="text/javascript" src="js/responsive.tabs.min.js"></script>
-        
+
         <!-- Responsive Table -->
         <script type="text/javascript" src="js/responsive.table.min.js"></script>
-        
+
         <!-- Masonry -->
         <script type="text/javascript" src="js/masonry.min.js"></script>
-        
+
         <!-- Carousel Swipe -->
         <script type="text/javascript" src="js/carousel.swipe.min.js"></script>
-        
+
         <!-- bxSlider -->
         <script type="text/javascript" src="js/bxslider.min.js"></script>
-        
+
         <!-- Custom Scripts -->
         <script type="text/javascript" src="js/main.js"></script>
-        
+
     </body>
 
 
