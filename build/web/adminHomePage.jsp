@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zxx">
 
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -254,7 +254,47 @@
         <!-- End: Page Banner -->
 
         <!-- Start: Blog Section -->
-        <div id="content" class="site-content">
+        <div class="container" style="height: max-content; vertical-align: middle; min-height: 600px">
+            <h2 style="text-align: center; margin: 3%; color: #f35618da;">Admin</h2>
+            <a href="adminCreate.jsp" style="font-size: 24px;font-weight:bold;"><i class="fa fa-plus" style="font-size:36px"></i>&ensp;Add new book</a> <br><br>
+            <table id="customers" class="table" style="width:100%;">
+                <thead>
+                    <tr>
+                        
+                        <td>ID</td>
+                        <td>Image</td>
+                        <td>Title</td>
+                        <td>Publisher</td>
+                        <td>Category</td>  
+                        <td>Delete</td>
+                        <td>Edit</td>
+                    </tr>
+                </thead>
+                <tbody>
+              
+                    <c:forEach items="${books}" var="x">
+                        <tr>
+                            <td>${x.id}</td>
+                            <td><a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" id="imgProfile" style="width: 100px; height: auto;" class="img-thumbnail"></a>
+                        </td>
+                        
+                        <td><a href="updatePage?id=${x.id}" rel="category tag">${x.title}</a></td>
+                        <td><a href="updatePage?id=${x.id}" >${x.publisher}</a></td>
+                        <td><a href="updatePage?id=${x.id}">${x.category}</a></td>    
+                            
+                           
+                            
+                            
+                            <td><a href="deleteBook?id=${x.id}"><i class="fa fa-remove" style="font-size:24px"></i></a></td>
+                            <td><a href="updatePage?id=${x.id}"><i class="fa fa-edit" style="font-size:24px"></i></a></td>
+                        </tr>
+                    </c:forEach>
+                        
+                </tbody>
+            </table>
+            
+        </div>
+<!--        <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="blog-main-list">
@@ -272,12 +312,12 @@
 
                                                     </div>
                                                     <a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" /></a>
-                                                    <!--                                                    <div class="post-share">
+                                                                                                        <div class="post-share">
                                                                                                             <a href="#."><i class="fa fa-comment"></i> 37</a>
                                                                                                             <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
                                                                                                             <a href="#."><i class="fa fa-eye"></i> 180</a>
                                                                                                             <a href="#."><i class="fa fa-share-alt"></i> Share</a>
-                                                                                                        </div>-->
+                                                                                                        </div>
                                                 </div>
                                                 <div class="post-detail">
                                                     <header class="entry-header">
@@ -295,7 +335,6 @@
                                                     </div>
                                                     <footer class="entry-footer">
                                                         <a class="btn btn-default" href="updatePage?id=${x.id}">${x.category}</a>
-                                                        <a class="btn btn-default" href="deleteBook?id=${x.id}">Delete</a>
                                                     </footer>
                                                 </div>
                                             </div>
@@ -308,7 +347,7 @@
                     </div>
                 </main>
             </div>
-        </div>
+        </div>-->
         <!-- End: Blog Section -->
 
         <!-- Start: Social Network -->

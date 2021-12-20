@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/nbproject/project.properties</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/nbproject/genfiles.properties</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/adminHomePage.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/Register.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/Logout.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/signin.jsp</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/nbproject/ant-deploy.xml</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/adminUpdate.jsp</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/updatePage.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/addBook.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/dal/UserDAO.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/nbproject/project.xml</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/dal/BookDAO.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/model/Book.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/blog.html</file>
@@ -18,7 +24,9 @@
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/update.java</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/adminHomePage.jsp</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/web/adminCreate.jsp</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/nbproject/build-impl.xml</file>
             <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/model/User.java</file>
+            <file>file:/D:/Windows/NetBeans/Projects/BookShopProject/src/java/controller/deleteBook.java</file>
         </group>
     </open-files>
 </project-private>

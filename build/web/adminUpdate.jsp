@@ -4,12 +4,9 @@
     Author     : ThuanMit
 --%>
 
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
@@ -624,22 +621,69 @@
                                                             </div>
                                                             <a href="#" id="loadmore">Load More Posts</a>
                                                         </div>-->
+                            <!--                            <form action="update" method="get">
+                                                            <input type="text" name="id" value="${book.id}"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
+                                                            <input type="text" name="title" value="${book.title}"/>
+                                                            <input type="text" name="author" value="${book.author}"/>
+                                                            
+                                                            image
+                                                            <span>Change the image's path</span>
+                                                            <img src="${book.brief}" alt="alo" width="150" height="auto"/>                                
+                                                            <input type="text" name="brief" value="${book.brief}"/>
+                                                            
+                                                            <input type="text" name="publisher" value="${book.publisher}"/>
+                                                            <textarea  name="content" cols='50' rows='10'value="${book.content}"></textarea>
+                                                            <input type="text" name="cate" value="${book.category}"/>
+                                                            
+                                                            <input type='submit' value='Create'/>
+                                                        </form> -->
                             <form action="update" method="get">
-                                <input type="text" name="id" value="${book.id}"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
-                                <input type="text" name="title" value="${book.title}"/>
-                                <input type="text" name="author" value="${book.author}"/>
 
-                                <!--image-->
-                                <span>Change the image's path</span>
-                                <img src="${book.brief}" alt="alo" width="150" height="auto"/>                                
-                                <input type="text" name="brief" value="${book.brief}"/>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label >Change the image's path</label> 
+                                        <img src="${book.brief}" alt="Picture" width="80" height="80"/>
 
-                                <input type="text" name="publisher" value="${book.publisher}"/>
-                                <textarea type="text"  name="content" cols='50' rows='10' >${book.content}</textarea>
-                                <input type="text" name="cate" value="${book.category}"/>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label >Enter new path here</label>
+                                        <input type="text" class="form-control" name="brief" value="${book.brief}"/>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputID">Book No.</label>
+                                        <input type="text" class="form-control" name="id" value="${book.id}"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
 
-                                <input type='submit' value='Save'/>
-                            </form> 
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputTitle">Title</label>
+                                        <input type="text" class="form-control" name="title" value="${book.title}"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAuthor">Author</label>
+                                        <input type="text" class="form-control" name="author" value="${book.author}"/>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPublisher">Publisher</label>
+                                        <input type="text" class="form-control" name="publisher" value="${book.publisher}"/>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputContent">Content </label>
+                                    <textarea class="form-control" name="content" value="${book.content}"></textarea> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCate">Category</label>
+                                    <input type="text" class="form-control"  name="cate" value="${book.category}"/>
+                                </div>
+
+                                <button type="submit" value="Create" class="btn btn-primary">UPDATE</button>
+                            </form>
                         </div>
                     </div>
                 </main>

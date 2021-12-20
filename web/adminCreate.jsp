@@ -23,7 +23,7 @@
 
         <!-- Stylesheet -->
         <link href="style.css" rel="stylesheet" type="text/css" />
-       
+
     </head>
     <body>
 
@@ -621,17 +621,60 @@
                                                             </div>
                                                             <a href="#" id="loadmore">Load More Posts</a>
                                                         </div>-->
+                            <!--                            <form action="addBook" method="get">
+                                                            <input type="text" name="id" placeholder="Book's id"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
+                                                            <input type="text" name="title" placeholder="Book's title"/>
+                                                            <input type="text" name="author" placeholder="Book's author"/>
+                                                            <input type="text" name="brief" placeholder="Book's brief"/>
+                                                            <input type="text" name="publisher" placeholder="Book's publisher"/>
+                                                            <textarea  name="content" cols='50' rows='10' placeholder="Book's content"></textarea>
+                                                            <input type="text" name="cate" placeholder="Book's category"/>
+                                                            
+                                                            <input type='submit' value='Create'/>
+                                                        </form> -->
                             <form action="addBook" method="get">
-                                <input type="text" name="id" placeholder="Book's id"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
-                                <input type="text" name="title" placeholder="Book's title"/>
-                                <input type="text" name="author" placeholder="Book's author"/>
-                                <input type="text" name="brief" placeholder="Book's brief"/>
-                                <input type="text" name="publisher" placeholder="Book's publisher"/>
-                                <textarea  name="content" cols='50' rows='10' placeholder="Book's content"></textarea>
-                                <input type="text" name="cate" placeholder="Book's category"/>
-                                
-                                <input type='submit' value='Create'/>
-                            </form> 
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputID">Book No.</label>
+                                        <input type="text" class="form-control" name="id" placeholder="Number of Book"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
+
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputTitle">Title</label>
+                                        <input type="text" class="form-control" name="title" placeholder="Title of Book"/>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputAuthor">Author</label>
+                                        <input type="text" class="form-control" name="author" placeholder="Author's name"/>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPublisher">Publisher</label>
+                                        <input type="text" class="form-control" name="publisher" placeholder="Publisher"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputBrief">Brief</label>
+                                    <textarea class="form-control" name="brief" placeholder="Book's brief"></textarea> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputContent">Content </label>
+                                    <textarea class="form-control" name="content" placeholder="A concise statement or summary"></textarea> 
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCate">Category</label>
+                                    <select name="cate" class="form-control">
+                                        <option selected>Choose one</option>
+                                        <option>Romance</option>
+                                        <option>Detective</option>
+                                        <option>Comic</option>
+                                        <option>Classics</option>
+                                    </select>
+                                </div>
+
+                                <button type="submit" value="Create" class="btn btn-primary">Create</button>
+                            </form>
                         </div>
                     </div>
                 </main>
@@ -829,7 +872,7 @@
         <!-- Owl Carousel -->
         <script type="text/javascript" src="js/owl.carousel.min.js"></script>
 
-        
+
         <!-- Accordion -->
         <script type="text/javascript" src="js/accordion.min.js"></script>
 
@@ -850,8 +893,8 @@
 
         <!-- Custom Scripts -->
         <script type="text/javascript" src="js/main.js"></script>
-        
-        
+
+
 
     </body>
 </html>

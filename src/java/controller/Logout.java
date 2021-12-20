@@ -25,7 +25,7 @@ public class Logout extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("user");
         session.removeAttribute("role");
-        response.sendRedirect(request.getContextPath() + "/signin");
+        response.sendRedirect(request.getContextPath() + "/index.html");
     }
 
     @Override
