@@ -88,7 +88,7 @@ public class Register extends HttpServlet {
         {
             try
             {
-               dao.registerAccount(username, Encrypt.md5(password));
+               dao.registerAccount(username, password);
             }
             catch(Exception e)
             {
