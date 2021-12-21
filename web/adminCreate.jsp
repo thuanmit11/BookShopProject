@@ -57,7 +57,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="topbar-links">
-                                                <a href="signin.html"><i class="fa fa-lock"></i>${user.getUserName()}/a>
+                                                <a href="signin.html"><i class="fa fa-lock"></i>${user.getUserName()}</a>
                                                 <span>|</span>
                                                 <div class="header-cart dropdown">
                                                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">

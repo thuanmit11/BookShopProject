@@ -639,50 +639,51 @@
                                                         </form> -->
                             <form action="update" method="get">
 
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label >Change the image's path</label> 
-                                        <img src="${book.brief}" alt="Picture" width="80" height="80"/>
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label >Enter new path here</label>
-                                        <input type="text" class="form-control" name="brief" value="${book.brief}"/>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputID">Book No.</label>
-                                        <input type="text" class="form-control" name="id" value="${book.id}"/><span id="error-msg" style="color:red; display:none;">ID existed</span>
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputTitle">Title</label>
-                                        <input type="text" class="form-control" name="title" value="${book.title}"/>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6">
-                                        <label for="inputAuthor">Author</label>
-                                        <input type="text" class="form-control" name="author" value="${book.author}"/>
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="inputPublisher">Publisher</label>
-                                        <input type="text" class="form-control" name="publisher" value="${book.publisher}"/>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputContent">Content </label>
-                                    <textarea class="form-control" name="content" value="${book.content}"></textarea> 
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputCate">Category</label>
-                                    <input type="text" class="form-control"  name="cate" value="${book.category}"/>
-                                </div>
-
-                                <button type="submit" value="Create" class="btn btn-primary">UPDATE</button>
+                               <br>
+                                                <br>
+                                                <div class="container mt-3">
+                                                    <div class="card p-3 text-center">
+                                                        <div class="d-flex flex-row justify-content-center mb-3">
+                                                            <div class="image"> <img src="${book.brief}" alt="Picture" class="rounded-circle" width="200" height="170"> </div>
+                                                            <div class="d-flex flex-column ms-3 user-details">
+                                                                                                                                
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Enter new path here</label> <input type="text" class="form-control" name="brief"
+                                                                    value="${book.brief}" /> </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Book No.</label> <input type="text" class="form-control" name="id" value="${book.id}" /><span
+                                                                    id="error-msg" style="color:red; display:none;">ID existed</span> </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Title</label> <input type="text" class="form-control" name="title"
+                                                                    value="${book.title}" /> </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Author</label> <input type="text" class="form-control" name="author"
+                                                                    value="${book.author}" /></div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Publisher</label> <input type="text" class="form-control" name="publisher"
+                                                                    value="${book.publisher}" /> </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="inputs"> <label>Category</label> <input type="text" class="form-control" name="cate"
+                                                                    value="${book.category}" /></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="about-inputs"> <label>Content</label> <textarea rows="6" class="form-control"  >${book.content}</textarea> </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mt-3 gap-2 d-flex justify-content-end"><button type="submit" value="Create" class="btn btn-primary" style="margin-left: 1010px;">UPDATE</button> </div>
+                                                    </div>
+                                                </div>
                             </form>
                         </div>
                     </div>

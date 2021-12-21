@@ -77,8 +77,7 @@ public class addBook extends HttpServlet {
 
         if (a == null) {
             bd.add(id, title, author, brief, publisher, content, cate);
-            out.println("<script>alert('Add success')</script>");
-            request.getRequestDispatcher("adminCreate.jsp").include(request, response);
+            request.getRequestDispatcher("adminHomePage").include(request, response);
         } else {
 //            out.println("<script type=\"text/javascript\">  document.getElementById('error-msg').style.display=\"inline\";    </script>");
             out.println("<script>alert('Error')</script>");
