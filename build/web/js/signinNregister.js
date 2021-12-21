@@ -8,7 +8,7 @@ function validate(){
     var usernameReg = document.getElementById("usernameReg").value;
     var passwordReg = document.getElementById("passwordReg").value;
     var passwordRetype = document.getElementById("passwordRetype").value;
-    var acceptTerm = document.getElementById("acceptTerm").value;
+    var acceptTerm = document.getElementById("acceptTerm");
     var registerErrorMessage = document.getElementById("registerErrorMessage");
     
     console.log(usernameReg);
@@ -22,7 +22,7 @@ function validate(){
         registerErrorMessage.innerHTML = 'Password does not match';
         return false;
     }
-    else if (acceptTerm == null)
+    else if (!acceptTerm.checked)
     {
         registerErrorMessage.innerHTML = 'Please accept the term';
         return false;

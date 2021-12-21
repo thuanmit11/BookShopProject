@@ -1,3 +1,8 @@
+<%-- 
+    Document   : homeUser
+    Created on : Dec 21, 2021, 2:03:43 AM
+    Author     : lucif
+--%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -255,8 +260,7 @@
 
         <!-- Start: Blog Section -->
         <div class="container" style="height: max-content; vertical-align: middle; min-height: 600px">
-            <h2 style="text-align: center; margin: 3%; color: #f35618da;">Admin</h2>
-            <a href="adminCreate.jsp" style="font-size: 24px;font-weight:bold;"><i class="fa fa-plus" style="font-size:36px"></i>&ensp;Add new book</a> <br><br>
+            <h2 style="text-align: center; margin: 3%; color: #f35618da;">Home</h2>
             <table id="customers" class="table" style="width:100%;">
                 <thead>
                     <tr>
@@ -266,8 +270,6 @@
                         <td>Title</td>
                         <td>Publisher</td>
                         <td>Category</td>  
-                        <td>Delete</td>
-                        <td>Edit</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -278,15 +280,11 @@
                             <td><a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" id="imgProfile" style="width: 100px; height: auto;" class="img-thumbnail"></a>
                         </td>
                         
-                        <td><a href="updatePage?id=${x.id}" rel="category tag">${x.title}</a></td>
-                        <td><a href="updatePage?id=${x.id}" >${x.publisher}</a></td>
-                        <td><a href="updatePage?id=${x.id}">${x.category}</a></td>    
+                        <td>${x.title}</td>
+                        <td>${x.publisher}</td>
+                        <td>${x.category}</td>    
                             
-                           
-                            
-                            
-                            <td><a href="deleteBook?id=${x.id}"><i class="fa fa-remove" style="font-size:24px"></i></a></td>
-                            <td><a href="updatePage?id=${x.id}"><i class="fa fa-edit" style="font-size:24px"></i></a></td>
+
                         </tr>
                     </c:forEach>
                         

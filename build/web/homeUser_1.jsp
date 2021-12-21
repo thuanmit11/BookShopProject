@@ -1,3 +1,8 @@
+<%-- 
+    Document   : homeUser
+    Created on : Dec 21, 2021, 2:03:43 AM
+    Author     : lucif
+--%>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -253,48 +258,9 @@
         </section>
         <!-- End: Page Banner -->
 
+       
         <!-- Start: Blog Section -->
-        <div class="container" style="height: max-content; vertical-align: middle; min-height: 600px">
-            <h2 style="text-align: center; margin: 3%; color: #f35618da;">Admin</h2>
-            <a href="adminCreate.jsp" style="font-size: 24px;font-weight:bold;"><i class="fa fa-plus" style="font-size:36px"></i>&ensp;Add new book</a> <br><br>
-            <table id="customers" class="table" style="width:100%;">
-                <thead>
-                    <tr>
-                        
-                        <td>ID</td>
-                        <td>Image</td>
-                        <td>Title</td>
-                        <td>Publisher</td>
-                        <td>Category</td>  
-                        <td>Delete</td>
-                        <td>Edit</td>
-                    </tr>
-                </thead>
-                <tbody>
-     
-                    <c:forEach items="${books}" var="x">
-                        <tr>
-                            <td>${x.id}</td>
-                            <td><a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" id="imgProfile" style="width: 100px; height: auto;" class="img-thumbnail"></a>
-                        </td>
-                        
-                        <td><a href="updatePage?id=${x.id}" rel="category tag">${x.title}</a></td>
-                        <td><a href="updatePage?id=${x.id}" >${x.publisher}</a></td>
-                        <td><a href="updatePage?id=${x.id}">${x.category}</a></td>    
-                            
-                           
-                            
-                            
-                            <td><a href="deleteBook?id=${x.id}"><i class="fa fa-remove" style="font-size:24px"></i></a></td>
-                            <td><a href="updatePage?id=${x.id}"><i class="fa fa-edit" style="font-size:24px"></i></a></td>
-                        </tr>
-                    </c:forEach>
-                        
-                </tbody>
-            </table>
-            
-        </div>
-<!--        <div id="content" class="site-content">
+        <div id="content" class="site-content">
             <div id="primary" class="content-area">
                 <main id="main" class="site-main">
                     <div class="blog-main-list">
@@ -302,53 +268,45 @@
                             <div class="row">
                                 <div class="blog-page grid">
                                     <c:forEach items="${books}" var="x">
-                                        <article>
-                                            <div class="grid-item blog-item">
-                                                <div class="post-thumbnail">
-                                                    <div class="post-date-box">
-                                                        <div class="post-date">
-                                                            <a class="date" href="updatePage?id=${x.id}">${x.id}</a>
-                                                        </div>
-
-                                                    </div>
-                                                    <a href="updatePage?id=${x.id}"><img alt="blog" src="${x.brief}" /></a>
-                                                                                                        <div class="post-share">
-                                                                                                            <a href="#."><i class="fa fa-comment"></i> 37</a>
-                                                                                                            <a href="#."><i class="fa fa-thumbs-o-up"></i> 110</a>
-                                                                                                            <a href="#."><i class="fa fa-eye"></i> 180</a>
-                                                                                                            <a href="#."><i class="fa fa-share-alt"></i> Share</a>
-                                                                                                        </div>
-                                                </div>
-                                                <div class="post-detail">
-                                                    <header class="entry-header">
-                                                        <div class="blog_meta_category">
-                                                            <span class="arrow-right"></span>
-                                                            <a href="updatePage?id=${x.id}" rel="category tag">${x.title}</a>, 
-                                                        </div>
-                                                        <h3 class="entry-title"><a href="updatePage?id=${x.id}">${x.publisher}</a></h3>
-                                                        <div class="entry-meta">
-                                                            <span><i class="fa fa-user"></i> <a href="updatePage?id=${x.id}">Admin</a></span>
-                                                        </div>
-                                                    </header>
-                                                    <div class="entry-content">
-                                                        <p>${x.content}</p>
-                                                    </div>
-                                                    <footer class="entry-footer">
-                                                        <a class="btn btn-default" href="updatePage?id=${x.id}">${x.category}</a>
-                                                    </footer>
-                                                </div>
+                                    <article>
+                                        <div class="grid-item blog-item">
+                                            <div class="post-thumbnail">
+                                              
+                                                <a href="blog-detail.html"><img alt="blog" src="${x.brief}" /></a>
+                                               
                                             </div>
-                                        </article>
-                                    </c:forEach>
-                                </div>
+                                            <div class="post-detail">
+                                                <header class="entry-header">
+                                                    <div class="blog_meta_category">
+                                                        <span class="arrow-right"></span>
+                                                        <a href="#." rel="category tag">${x.category}</a>
+                                                    </div>
+                                                    <h3 class="entry-title"><a href="blog-detail.html">${x.title}</a></h3>
+                                                    <div class="entry-meta">
+                                                        <span><i class="fa fa-user"></i> <a href="#">${x.publisher}</a></span>
+                                                    </div>
+                                                </header>
+                                                <div class="entry-content">
+                                                    <p>Curabitur sagittis fermentum ante at imperdiet. Proin viverra arcu ac quam finibus, efficitur rutrum turpis auctor. Maecenas at mi vitae lacus tempus egestas nec eget eros. Nunc eget est tellus. Quisque quis mattis eros, sit amet facilisis felis. Aliquam molestie purus venenatis lorem laoreet venenatis.....</p>
+                                                </div>
+                                                <footer class="entry-footer">
+                                                    <a class="btn btn-default" href="blog-detail.html">Read More</a>
+                                                </footer>
+                                            </div>
+                                        </div>
+                                       
+                                    </article>
+                                 </c:forEach>
 
+                                </div>
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
-        </div>-->
+        </div>
         <!-- End: Blog Section -->
+
 
         <!-- Start: Social Network -->
         <section class="social-network section-padding">
